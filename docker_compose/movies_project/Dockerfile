@@ -15,7 +15,7 @@ ENV UWSGI_HARAKIRI 240
 COPY run_uwsgi.sh run_uwsgi.sh
 COPY requirements.txt requirements.txt
 COPY uwsgi/uwsgi.ini uwsgi.ini
-COPY config/.env .env
+COPY config/env/.env .env
 
 RUN pip install --upgrade pip \
          && pip install -r requirements.txt
