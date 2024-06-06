@@ -2,8 +2,6 @@ version: '3'
 services:
   django: 
       build:  .
-      ports:
-        - "8000:8000"
       env_file:
         - config/env/.env
   postgres:
@@ -11,8 +9,6 @@ services:
       restart: always
       env_file:
         - config/env/bd.env
-      ports:
-        - "5432:5432"
       volumes:
         - pgdata:/var/lib/postgresql/data
   nginx:

@@ -72,8 +72,6 @@ class MoviesApiMixin:
 
 
 class MoviesListPaginatorApi(MoviesApiMixin, BaseListView):
-    model = Filmwork
-    http_method_names = ['get']
     paginate_by = PAGE_COUNT
     previous_page = None
     next_page = None
@@ -107,9 +105,5 @@ class MoviesListPaginatorApi(MoviesApiMixin, BaseListView):
 
 
 class MoviesDetailApi(MoviesApiMixin, BaseDetailView):
-    model = Filmwork
-    http_method_names = ['get']
-
-    @exception
     def get_context_data(self, **kwargs):
         return self.object
